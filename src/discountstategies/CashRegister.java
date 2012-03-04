@@ -10,7 +10,7 @@ package discountstategies;
  */
 public class CashRegister {
     
-    Receipt receipt;
+    Receipt receipt = new Receipt();
     
     
     public void startNewSale(String customerNo) {

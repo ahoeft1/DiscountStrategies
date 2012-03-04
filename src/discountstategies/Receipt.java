@@ -13,7 +13,7 @@ public class Receipt {
     LineItem[] lineItems;
     private int i; //counter used in array manipulation.
     
-     private Customer[] customerDataBase = {
+     public Customer[] customerDataBase = {
         new Customer("101", "Big Bob"),
         new Customer("102", "McHammer"),
         new Customer("103", "Big Bird")
@@ -43,14 +43,14 @@ public class Receipt {
         
         LineItem lineItem = new LineItem(productId, qty);
         
-        lineItems = (LineItem[])resizeArray(i, i++);
+        lineItems = (LineItem[])resizeArray(lineItems, i++);
         i++;
         lineItems[i] = lineItem;
     }
     public void displayReceipt(){
         System.out.println("Thank you " + customer.getCustomerName() + " for shopping today!");
-        for (int i = 0; i<lineItems.length; i++)
-            System.out.println(lineItems[i]);
+        for (int j = 0; j<lineItems.length; j++)
+            System.out.println(lineItems[j]);
         
     }
      private static Object resizeArray (Object oldArray, int newSize) {
