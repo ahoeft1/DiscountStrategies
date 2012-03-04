@@ -10,18 +10,19 @@ package discountstategies;
  */
 public class CashRegister {
     
+    Receipt receipt;
+    
     
     public void startNewSale(String customerNo) {
-      
-        
+      receipt.startNewSale(customerNo);    
     }
     
     public void addProduct(String productId, int qty){
-        
+        receipt.addNewLineItem(productId, qty);
     }
     
     public void finalizeSale() {
-        
+        receipt.displayReceipt();
     }
     
 }

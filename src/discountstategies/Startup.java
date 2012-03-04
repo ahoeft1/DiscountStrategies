@@ -14,6 +14,12 @@ public class Startup {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+       CashRegister cr = new CashRegister();
+       
+       cr.startNewSale("101");
+       cr.addProduct("HW1002", 1);
+       cr.addProduct("HW1003", 3);
+       cr.addProduct("HW1004", 1);
+       cr.finalizeSale();
     }
 }
