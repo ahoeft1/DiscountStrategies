@@ -18,8 +18,8 @@ public class Startup {
        
        cr.startNewSale("101");
        cr.addProduct("HW1002", 1);
-       //cr.addProduct("HW1003", 3);
-       //cr.addProduct("HW1004", 1);
-       //cr.finalizeSale();
+       cr.addProduct("HW1003", 3);
+       cr.addProduct("HW1004", 1);
+       cr.finalizeSale();
     }
 }

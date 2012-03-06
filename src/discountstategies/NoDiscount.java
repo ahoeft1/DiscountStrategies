@@ -11,7 +11,7 @@ package discountstategies;
 public class NoDiscount implements DiscountStrategy {
     
     public double applyDiscount(){
-        return 0;
+        return 1;
     }
     
 }

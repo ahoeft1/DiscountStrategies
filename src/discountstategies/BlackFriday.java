@@ -11,7 +11,7 @@ package discountstategies;
 public class BlackFriday implements DiscountStrategy {
     
     public double applyDiscount(){
-        return .25;
+        return .5;
     }
     
 }

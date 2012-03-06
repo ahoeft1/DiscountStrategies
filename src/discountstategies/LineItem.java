@@ -12,16 +12,18 @@ public class LineItem {
     
     private Product product;
     private String productId;
-    private int qty;
+    private double qty;
+    NoDiscount noDiscount = new NoDiscount();
+    BlackFriday blackFriday = new BlackFriday();
     
     private Product[] productsDataBase = {
-        new Product("Hammer", "HW1002", 19.99, null),
-        new Product("BoxOfNails", "HW1003", 10.99, null),
-        new Product("Chainsaw", "HW1004", 79.99, null)
+        new Product("Hammer", "HW1002", 19.99, blackFriday),
+        new Product("BoxOfNails", "HW1003", 10.99, noDiscount),
+        new Product("Chainsaw", "HW1004", 79.99, noDiscount)
             
     };
     
-    public LineItem(String productId, int qty) {
+    public LineItem(String productId, double qty) {
         this.productId = productId;
         this.qty = qty;
         product = findProductById(productId);
@@ -38,6 +40,17 @@ public class LineItem {
         }
         return product;
     }
+       public String toString(){
+         StringBuffer receipt = new StringBuffer();
+         
+         receipt.append(this.qty);
+         receipt.append(" ");
+         receipt.append(this.product.getProductName());
+         receipt.append(" ");
+         receipt.append(this.product.getCost());
+         
+         return receipt.toString(); 
+     }
 
     /**
      * @return the product
@@ -70,14 +83,14 @@ public class LineItem {
     /**
      * @return the qty
      */
-    public int getQty() {
+    public double getQty() {
         return qty;
     }
 
     /**
      * @param qty the qty to set
      */
-    public void setQty(int qty) {
+    public void setQty(double qty) {
         this.qty = qty;
     }
     
